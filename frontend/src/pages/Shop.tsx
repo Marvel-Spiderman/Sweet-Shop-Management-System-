@@ -4,6 +4,7 @@ import { ShoppingCart, Search } from 'lucide-react';
 import api from '../api/axios';
 import type { Product } from '../types';
 import { useStore } from '../store/useStore';
+import { motion } from 'framer-motion';
 
 export default function Shop() {
     const [products, setProducts] = useState<Product[]>([]);
@@ -69,44 +70,61 @@ export default function Shop() {
             </div>
 
             {/* Product Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <motion.div
+                layout
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+            >
                 {filteredProducts.map(product => (
-                    <div key={product.id} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition flex flex-col">
-                        <div className="h-56 overflow-hidden">
+                    <motion.div
+                        layout
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.9 }}
+                        transition={{ duration: 0.3 }}
+                        key={product.id}
+                        className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-2xl transition-all duration-300 flex flex-col group"
+                    >
+                        <div className="h-64 overflow-hidden relative">
                             <img
                                 src={product.image_url}
                                 alt={product.name}
-                                className="w-full h-full object-cover transition transform hover:scale-110 duration-500"
+                                className="w-full h-full object-cover transition transform duration-700 group-hover:scale-110"
                             />
+                            {!product.is_available && (
+                                <div className="absolute inset-0 bg-black/50 flex items-center justify-center text-white font-bold text-xl uppercase tracking-widest backdrop-blur-sm">
+                                    Sold Out
+                                </div>
+                            )}
                         </div>
 
-                        <div className="p-4 flex-1 flex flex-col">
-                            <div className="flex justify-between items-start mb-2">
-                                <h2 className="text-xl font-bold text-gray-800">{product.name}</h2>
-                                <span className="bg-green-100 text-green-800 text-xs font-bold px-2 py-1 rounded">
+                        <div className="p-6 flex-1 flex flex-col">
+                            <div className="flex justify-between items-start mb-3">
+                                <h2 className="text-2xl font-bold text-gray-800 group-hover:text-primary transition-colors">{product.name}</h2>
+                                <span className="bg-green-100 text-green-800 text-sm font-bold px-3 py-1 rounded-full">
                                     ₹{product.price}
                                 </span>
                             </div>
-                            <p className="text-gray-600 text-sm mb-4 flex-1 line-clamp-2">{product.description}</p>
+                            <p className="text-gray-600 mb-6 flex-1 line-clamp-2 leading-relaxed">{product.description}</p>
 
-                            <div className="mt-4 flex gap-2">
+                            <div className="mt-auto flex gap-3">
                                 <button
                                     onClick={() => addToCart(product)}
-                                    className="flex-1 bg-primary text-white py-2 rounded-lg font-medium hover:bg-blue-900 transition flex items-center justify-center gap-2"
+                                    disabled={!product.is_available}
+                                    className="flex-1 bg-primary text-white py-3 rounded-lg font-bold hover:bg-blue-900 transition flex items-center justify-center gap-2 transform active:scale-95 disabled:bg-gray-400 disabled:cursor-not-allowed"
                                 >
-                                    <ShoppingCart size={18} /> Add to Cart
+                                    <ShoppingCart size={20} /> Add to Cart
                                 </button>
                                 <Link
                                     to={`/product/${product.id}`}
-                                    className="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 text-gray-700"
+                                    className="px-4 py-3 border-2 border-gray-200 rounded-lg hover:border-primary hover:text-primary transition font-medium"
                                 >
                                     View
                                 </Link>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
                 ))}
-            </div>
+            </motion.div>
 
             {filteredProducts.length === 0 && (
                 <div className="text-center py-12 text-gray-500">

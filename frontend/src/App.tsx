@@ -18,6 +18,8 @@ function ScrollToTop() {
   return null;
 }
 
+import { Toaster } from 'sonner';
+
 function Layout() {
   return (
     <div className="flex flex-col min-h-screen">
@@ -45,6 +47,7 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
+      <Toaster position="top-center" richColors />
       <Layout />
     </Router>
   );
