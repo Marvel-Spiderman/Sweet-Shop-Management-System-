@@ -2,8 +2,5 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  body {
-    @apply bg-background text-slate-900 font-sans;
-  }
-}
+/* @apply removed to avoid Tailwind v4 strictness issues during build */
+/* Classes moved to index.html or proper components */

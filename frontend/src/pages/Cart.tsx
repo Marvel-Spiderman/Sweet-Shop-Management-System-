@@ -1,4 +1,4 @@
-import { Trash2, ArrowRight } from 'lucide-react';
+import { Trash2 } from 'lucide-react';
 import { useStore } from '../store/useStore';
 import { Link, useNavigate } from 'react-router-dom';
 import api from '../api/axios';

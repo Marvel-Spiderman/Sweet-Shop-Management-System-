@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ShoppingCart, ArrowLeft, Star } from 'lucide-react';
 import api from '../api/axios';
-import { Product } from '../types';
+import type { Product } from '../types';
 import { useStore } from '../store/useStore';
 
 export default function ProductDetails() {

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import api from '../api/axios';
 import { useStore } from '../store/useStore';
-import { User } from '../types';
+import type { User } from '../types';
 
 export default function Login() {
     const [email, setEmail] = useState('');
@@ -15,7 +15,7 @@ export default function Login() {
         e.preventDefault();
         setError('');
         try {
-            const formData = new URLSearchParams(); // FastAPI OAuth2 expects form data format sometimes, but our schema is JSON
+            // const formData = new URLSearchParams(); // Removed unused variable
             // Actually backend expects JSON body based on schemas.UserLogin for /auth/login POST unless using OAuthForm
             // Let's check backend router: 'user: schemas.UserLogin'. Yes JSON.
 

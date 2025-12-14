@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ShoppingCart, Search } from 'lucide-react';
 import api from '../api/axios';
-import { Product } from '../types';
+import type { Product } from '../types';
 import { useStore } from '../store/useStore';
 
 export default function Shop() {
@@ -58,8 +58,8 @@ export default function Shop() {
                             key={cat}
                             onClick={() => setSelectedCategory(cat)}
                             className={`px-4 py-2 rounded-full whitespace-nowrap ${selectedCategory === cat
-                                    ? 'bg-primary text-white'
-                                    : 'bg-white border text-gray-700 hover:bg-gray-50'
+                                ? 'bg-primary text-white'
+                                : 'bg-white border text-gray-700 hover:bg-gray-50'
                                 }`}
                         >
                             {cat}
