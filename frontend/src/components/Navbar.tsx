@@ -1,11 +1,17 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ShoppingCart, Menu, User, LogOut } from 'lucide-react';
 import { useStore } from '../store/useStore';
 import { useState } from 'react';
 
 export default function Navbar() {
-    const { cart, user, logout } = useStore();
+    const { cart, user, logout: storeLogout } = useStore();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const navigate = useNavigate();
+
+    const logout = () => {
+        storeLogout();
+        navigate('/');
+    };
 
     const cartCount = cart.reduce((acc, item) => acc + item.quantity, 0);
 
@@ -23,15 +29,22 @@ export default function Navbar() {
 
                         {user ? (
                             <div className="relative group">
-                                <button className="flex items-center gap-2 text-gray-700 hover:text-primary">
+                                <button className="flex items-center gap-2 text-gray-700 hover:text-primary font-medium py-2">
                                     <User size={20} />
                                     <span>{user.full_name}</span>
                                 </button>
-                                <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 hidden group-hover:block border">
+                                {/* Dropdown menu - ensure high z-index and solid background */}
+                                <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-xl py-2 hidden group-hover:block border border-gray-100 z-50">
                                     {user.role === 'admin' && (
-                                        <Link to="/admin" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Admin Dashboard</Link>
+                                        <Link to="/admin" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 border-b border-gray-100">Admin Dashboard</Link>
                                     )}
-                                    <button onClick={logout} className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex items-center gap-2">
+                                    <button
+                                        onClick={() => {
+                                            logout();
+                                            // Optional: Force reload or redirect if needed, but state change should trigger re-render
+                                        }}
+                                        className="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-red-50 flex items-center gap-2 font-semibold"
+                                    >
                                         <LogOut size={16} /> Logout
                                     </button>
                                 </div>

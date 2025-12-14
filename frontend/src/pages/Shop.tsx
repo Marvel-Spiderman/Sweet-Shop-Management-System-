@@ -110,7 +110,7 @@ export default function Shop() {
                                 <button
                                     onClick={() => addToCart(product)}
                                     disabled={!product.is_available}
-                                    className="flex-1 bg-primary text-white py-3 rounded-lg font-bold hover:bg-blue-900 transition flex items-center justify-center gap-2 transform active:scale-95 disabled:bg-gray-400 disabled:cursor-not-allowed"
+                                    className="flex-1 bg-primary text-white py-3 rounded-lg font-bold hover:bg-blue-900 hover:shadow-lg transition flex items-center justify-center gap-2 transform active:scale-95 disabled:bg-gray-400 disabled:cursor-not-allowed shadow-md"
                                 >
                                     <ShoppingCart size={20} /> Add to Cart
                                 </button>
