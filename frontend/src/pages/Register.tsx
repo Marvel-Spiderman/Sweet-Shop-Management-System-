@@ -2,6 +2,9 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import api from '../api/axios';
 
+import { motion } from 'framer-motion';
+// ... imports
+
 export default function Register() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -22,14 +25,19 @@ export default function Register() {
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-md w-full space-y-8 bg-white p-8 rounded-xl shadow-lg">
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="max-w-md w-full space-y-8 bg-white p-8 rounded-xl shadow-lg"
+            >
                 <div>
                     <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
                         Create an account
                     </h2>
                 </div>
                 <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
-                    {error && <div className="text-red-500 text-sm text-center">{error}</div>}
+                    {error && <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-red-500 text-sm text-center bg-red-50 p-2 rounded">{error}</motion.div>}
                     <div className="rounded-md shadow-sm -space-y-px">
                         <div>
                             <input
@@ -66,16 +74,16 @@ export default function Register() {
                     <div>
                         <button
                             type="submit"
-                            className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-blue-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+                            className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-blue-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition transform active:scale-95 hover:shadow-lg"
                         >
                             Sign up
                         </button>
                     </div>
                 </form>
                 <div className="text-center">
-                    <Link to="/login" className="text-primary hover:text-blue-900">Already have an account? Sign in</Link>
+                    <Link to="/login" className="text-primary hover:text-blue-900 font-medium hover:underline">Already have an account? Sign in</Link>
                 </div>
-            </div>
+            </motion.div>
         </div>
     );
 }
