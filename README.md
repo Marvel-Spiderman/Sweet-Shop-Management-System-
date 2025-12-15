@@ -208,29 +208,6 @@ Before you begin, ensure you have the following installed:
 To access the admin dashboard, you can register a new user and manually update their role in the database, or use the following test credentials if seeded:
 - **Email**: `admin@sweetshop.com`
 - **Password**: `admin123`
-
-## 📸 Screenshots
-
-### Home Page - Hero Section
-![Home Page](screenshots/home-hero.png)
-*Dynamic hero section with rotating background images and typewriter animation*
-
-### Shop Page - Product Catalog
-![Shop Page](screenshots/shop-catalog.png)
-*Product grid with custom frames, category filters, and animated search bar*
-
-### Shopping Cart
-![Cart Page](screenshots/cart.png)
-*Interactive shopping cart with quantity controls and order summary*
-
-### Admin Dashboard
-![Admin Dashboard](screenshots/admin-dashboard.png)
-*Analytics dashboard with sales metrics and product management*
-
-### Login Page
-![Login Page](screenshots/login.png)
-*Glassmorphic login form with dynamic background and quote slideshow*
-
 ## 🤖 My AI Usage
 
 Throughout the development of this Sweet Shop Management System, I leveraged AI tools extensively to accelerate development, enhance code quality, and implement advanced features. Here's a detailed breakdown of how AI assisted in this project:
