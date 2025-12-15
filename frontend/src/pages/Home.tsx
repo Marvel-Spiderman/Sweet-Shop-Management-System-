@@ -18,10 +18,13 @@ const heroImages = [
     "/hero/hero2.png",
     "/hero/hero3.png",
     "/hero/hero4.png",
-    "https://images.unsplash.com/photo-1589119908995-c6837fa14848?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80", // Gulab Jamun
-    "https://images.unsplash.com/photo-1552596827-0c75c8846c4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80", // Kaju Katli / Barfi
-    "https://images.unsplash.com/photo-1596541223844-3c870e28c4cc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80", // Jalebi
-    "https://images.unsplash.com/photo-1616031268499-281b67277743?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"  // Rasgulla
+    "/hero/hero5.png", // Uploaded Kaju Katli
+    "https://images.unsplash.com/photo-1589119908995-c6837fa14848?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80", // Gulab Jamun (Classic)
+    "https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80", // Samosa/Jalebi Mix
+    "https://images.unsplash.com/photo-1552596827-0c75c8846c4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80", // Barfi Box
+    "https://images.unsplash.com/photo-1528198622811-0842b4e50787?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80", // Jalebi (Close up)
+    "https://images.unsplash.com/photo-1616031268499-281b67277743?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80", // Rasgulla
+    "https://images.unsplash.com/photo-1517244683847-7456b63c5969?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"  // Motichoor Ladoo
 ];
 
 export default function Home() {
@@ -43,7 +46,7 @@ export default function Home() {
                     <motion.div
                         animate={{ opacity: [0.3, 0.5, 0.3] }}
                         transition={{ duration: 5, repeat: Infinity }}
-                        className="absolute inset-0 bg-black/40 z-10"
+                        className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70 z-10"
                     />
                     <AnimatePresence mode="wait">
                         <motion.img
@@ -61,23 +64,39 @@ export default function Home() {
                 <motion.div
                     initial="hidden"
                     animate="visible"
-                    variants={fadeInUp}
-                    className="relative z-10 text-center px-4"
+                    variants={staggerContainer}
+                    className="relative z-10 text-center px-4 max-w-4xl mx-auto"
                 >
-                    <motion.h1
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.8 }}
-                        className="text-6xl md:text-8xl font-bold text-white mb-6 tracking-tight"
+                    <motion.div variants={fadeInUp}>
+                        <h1 className="text-5xl md:text-8xl font-extrabold text-white mb-6 tracking-tight drop-shadow-lg">
+                            Authentic <br className="md:hidden" />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 drop-shadow-sm">
+                                Indian Sweets
+                            </span>
+                        </h1>
+                    </motion.div>
+
+                    <motion.div
+                        initial="hidden"
+                        animate="visible"
+                        variants={{
+                            visible: { transition: { staggerChildren: 0.03, delayChildren: 1 } }
+                        }}
+                        className="text-xl md:text-3xl text-white/90 mb-10 font-bold drop-shadow-md leading-relaxed min-h-[4rem]"
                     >
-                        Authentic <span className="text-secondary">Indian Sweets</span>
-                    </motion.h1>
-                    <motion.p
-                        variants={fadeInUp}
-                        className="text-xl md:text-3xl text-gray-200 mb-10 max-w-3xl mx-auto font-light"
-                    >
-                        Experience the rich tradition of handcrafted mithai. Pure ingredients, timeless recipes, and the taste of celebration.
-                    </motion.p>
+                        {Array.from("Experience the rich tradition of handcrafted mithai.").map((char, index) => (
+                            <motion.span key={index} variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}>
+                                {char}
+                            </motion.span>
+                        ))}
+                        <br className="hidden md:block" />
+                        {Array.from("Pure ingredients, timeless recipes, and the taste of celebration.").map((char, index) => (
+                            <motion.span key={index} variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}>
+                                {char}
+                            </motion.span>
+                        ))}
+                    </motion.div>
+
                     <motion.div variants={fadeInUp}>
                         <Link to="/shop" className="inline-flex items-center px-10 py-5 bg-accent text-white font-bold text-lg rounded-full hover:bg-yellow-500 transition shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                             Order Now <ArrowRight className="ml-2" />
@@ -128,7 +147,13 @@ export default function Home() {
                             className="p-8 bg-white rounded-2xl shadow-xl hover:shadow-2xl transition transform hover:-translate-y-2 border border-gray-100"
                         >
                             <h3 className="text-2xl font-bold mb-4 text-primary">{feature.title}</h3>
-                            <p className="text-gray-600 text-lg leading-relaxed">{feature.desc}</p>
+                            <p className="text-gray-600 text-lg leading-relaxed mb-6">{feature.desc}</p>
+                            <Link
+                                to="/shop"
+                                className="inline-block bg-blue-600 text-white font-bold py-4 px-10 rounded-full shadow-lg hover:bg-blue-700 hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+                            >
+                                Browse Sweets
+                            </Link>
                         </motion.div>
                     ))}
                 </motion.div>
@@ -138,12 +163,13 @@ export default function Home() {
 }
 
 const images = [
-    "https://images.unsplash.com/photo-1596541223844-3c870e28c4cc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80", // Jalebi
-    "https://images.unsplash.com/photo-1589119908995-c6837fa14848?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80", // Gulab Jamun
-    "https://images.unsplash.com/photo-1598516093188-75c6020bf6a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80", // Ladoo
-    "https://images.unsplash.com/photo-1616031268499-281b67277743?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80", // Rasgulla
-    "https://images.unsplash.com/photo-1621245366479-787eb9825b7b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80", // Mixed Box
-    "https://images.unsplash.com/photo-1552596827-0c75c8846c4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80", // Barfi/Box
-    "https://images.unsplash.com/photo-1589948197771-46487e91542f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80", // Soan Papdi/Halwa
-    "https://plus.unsplash.com/premium_photo-1675282710352-79354784080e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80", // Mix Sweets
+    "/sweet-1.png", // Uploaded Gulab Jamun
+    "/sweet-2.png", // Uploaded Kaju Katli
+    "/sweet-3.png", // Uploaded Jalebi
+    "/sweet-4.png", // Uploaded Gulab Jamun 2
+    "/sweet-5.png", // Uploaded Chocolate Barfi
+    "/sweet-6.jpg", // Uploaded Mix Sweets
+    "/sweet-7.png", // Uploaded Halwa
+    "/sweet-8.png", // Uploaded Ladoo
+    "/sweet-9.png", // Uploaded Motichoor
 ];

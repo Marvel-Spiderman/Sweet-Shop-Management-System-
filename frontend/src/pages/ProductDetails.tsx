@@ -106,7 +106,7 @@ export default function ProductDetails() {
                         <button
                             onClick={handleAddToCart}
                             disabled={product.stock === 0}
-                            className="w-full md:w-auto bg-primary text-white py-3 px-8 rounded-lg font-bold text-lg hover:bg-blue-900 shadow-md hover:shadow-lg transition flex items-center justify-center gap-2 disabled:bg-gray-400 transform active:scale-95"
+                            className="w-full md:w-auto bg-blue-600 text-white py-3 px-8 rounded-lg font-bold text-lg hover:bg-blue-700 shadow-md hover:shadow-lg transition flex items-center justify-center gap-2 disabled:bg-gray-400 transform active:scale-95"
                         >
                             <ShoppingCart /> {product.stock > 0 ? 'Add to Cart' : 'Out of Stock'}
                         </button>

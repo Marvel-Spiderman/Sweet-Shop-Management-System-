@@ -74,14 +74,14 @@ export default function Register() {
                     <div>
                         <button
                             type="submit"
-                            className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-blue-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition transform active:scale-95 hover:shadow-lg"
+                            className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition transform active:scale-95 hover:shadow-lg"
                         >
                             Sign up
                         </button>
                     </div>
                 </form>
                 <div className="text-center">
-                    <Link to="/login" className="text-primary hover:text-blue-900 font-medium hover:underline">Already have an account? Sign in</Link>
+                    <Link to="/login" className="text-blue-600 hover:text-blue-800 font-bold hover:underline">Already have an account? Sign in</Link>
                 </div>
             </motion.div>
         </div>
