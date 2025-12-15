@@ -288,4 +288,4 @@ This project was created as part of the Incubyte hiring process. All rights rese
 
 ---
 
-**Built with ❤️ and AI assistance**
+**Built with ❤️ **
