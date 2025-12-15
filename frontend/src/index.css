@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 /* @apply removed to avoid Tailwind v4 strictness issues during build */
 /* Classes moved to index.html or proper components */

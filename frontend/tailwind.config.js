@@ -12,6 +12,7 @@ export default {
                 accent: "#f59e0b", // Amber/Gold
                 background: "#f8fafc",
                 surface: "#ffffff",
+                cream: "#FDFBF7", // Creamy White
             },
             fontFamily: {
                 sans: ['Inter', 'sans-serif'],
