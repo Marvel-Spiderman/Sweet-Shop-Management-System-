@@ -123,7 +123,7 @@ export default function Shop() {
                                 {/* Product Image (Inside Frame) */}
                                 <div className="w-full h-full flex items-end justify-center overflow-hidden rounded-lg">
                                     <img
-                                        src={product.name.toLowerCase().includes('kaju') ? "" : product.image_url }
+                                        src={product.name.toLowerCase().includes('kaju') ? "/kaju-new.png?v=1" : product.image_url }
                                         alt={product.name}
                                         className="w-[80%] h-[70%] object-cover mb-2 rounded-md shadow-sm z-0 relative"
                                     />
