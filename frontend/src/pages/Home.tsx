@@ -19,12 +19,12 @@ const heroImages = [
     "/hero/hero3.png",
     "/hero/hero4.png",
     "/hero/hero5.png", // Uploaded Kaju Katli
-    "https://images.unsplash.com/photo-1589119908995-c6837fa14848?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80", // Gulab Jamun (Classic)
-    "https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80", // Samosa/Jalebi Mix
-    "https://images.unsplash.com/photo-1552596827-0c75c8846c4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80", // Barfi Box
-    "https://images.unsplash.com/photo-1528198622811-0842b4e50787?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80", // Jalebi (Close up)
-    "https://images.unsplash.com/photo-1616031268499-281b67277743?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80", // Rasgulla
-    "https://images.unsplash.com/photo-1517244683847-7456b63c5969?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"  // Motichoor Ladoo
+    "https://imgs.search.brave.com/xaRFPnclTyu_4cp0-RqqsTJwFGKoTctSGG_w0kfKtHU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzE2LzU4LzAwLzE0/LzM2MF9GXzE2NTgw/MDE0NzhfSmJnWHlz/VDZPS0lueEdBRFBO/d2kxdXRKSkNzUHJC/Q2ouanBn", // Gulab Jamun (Classic)
+    "https://imgs.search.brave.com/IuRkOP1HgR_rOXI6VEGAytvozyubxMnsLWR8BCaevpE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by90cmFkaXRpb25h/bC1qYWxlYmktc2Vy/dmVkLWRlY29yYXRp/dmUtYnJhc3MtcGxh/dF8xMTY5ODgwLTE3/MzE0OC5qcGc_c2Vt/dD1haXNfaHlicmlk/Jnc9NzQwJnE9ODA", // Samosa/Jalebi Mix
+    "https://imgs.search.brave.com/y_HPViWxkvdw1VkTZD4u7Dx-fBQ8Rd41Ijo03rdXRMc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/c2h1dHRlcnN0b2Nr/LmNvbS9pbWFnZS1w/aG90by9taXgtbWl0/aGFpLTI2MG53LTMw/ODY3OTEwNy5qcGc", // Barfi Box
+    "https://imgs.search.brave.com/3oMyE6Km1Nxta0DZ5uMrGBIntruHC-kob5hFjt5haqk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9jbGFzc2ljLWph/bGViaS1zd2VldHMt/dHJhZGl0aW9uYWwt/aW5kaWFuLXN3ZWV0/LWphbGViaS1pbWFn/ZS1waG90b2dyYXBo/eV8xMDIwNjk3LTEz/MTg0My5qcGc_c2Vt/dD1haXNfaHlicmlk/Jnc9NzQwJnE9ODA", // Jalebi (Close up)
+    "https://imgs.search.brave.com/b4WSaOoqyPHacYwrcb_nznO_XTQvh2W2WreXUwVjAZg/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9pbmRpYW4tc3dl/ZXQtcmFzZ3VsbGEt/Y2xheS1wb3RfMTM2/MzU0LTYyNzYuanBn/P3NlbXQ9YWlzX2h5/YnJpZCZ3PTc0MCZx/PTgw", // Rasgulla
+    "https://imgs.search.brave.com/HralMQXHKczGTZRYxLw53O3HJGXYroEjP4BhjD1VC44/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9pbmRp/YW4tc3dlZXQtbW90/aWNob29yLWxhZGRv/by1idW5kaS1sYWRk/dS1taXRhaGVlLWVu/aXBwdS1tb3RpY2h1/ci1zb2Z0LWRlbGlz/aC1tZWx0LW1vdXRo/LWxhZG9vLW1hZGUt/bWFpbmx5LWdyYW0t/MzM5NTc2NzA4Lmpw/Zw"  // Motichoor Ladoo
 ];
 
 export default function Home() {
