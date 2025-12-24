@@ -6,8 +6,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 
 const loginImages = [
-    "https://images.unsplash.com/photo-1596541223844-3c870e28c4cc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
-    "https://images.unsplash.com/photo-1552596827-0c75c8846c4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+    "https://imgs.search.brave.com/mgH_jxdcdUUCuX0gI6RCEFd2eZNADtme4OtFDJQUUh0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvOTQy/Mjg2Mjc4L3Bob3Rv/L3dvbWFuLXBob3Rv/Z3JhcGhpbmctaGVy/LWNha2UuanBnP3M9/NjEyeDYxMiZ3PTAm/az0yMCZjPXlPWXVZ/WkZyVS1tUGM3U2pX/Mjd1NWw5czgwdnZl/THlwb3REU0VISTRP/WWM9",
+    "https://imgs.search.brave.com/aV18zJbqIHQDy9Gp727t9X3vMG-cR5n4R8qWDQdQ3Y0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvNDk0/NTk5NzM3L3Bob3Rv/L2NhbmR5LXNob3Au/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PWU3Wlh5aXgwT25u/eGwwTU5FMjFSaUZB/b1JnaV9TY1I5OURB/UjNCLTZ3V3c9",
     "https://images.unsplash.com/photo-1589119908995-c6837fa14848?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
 ];
 
